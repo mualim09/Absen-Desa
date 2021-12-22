@@ -17,7 +17,7 @@ class KehadiranController extends Controller
      */
     public function index()
     {
-        $kehadiran = Kehadiran::with('pegawai');
+        $kehadiran = Kehadiran::with('pegawai')->get();
         return view('admin.kehadiran.index', compact('kehadiran'));
     }
 
