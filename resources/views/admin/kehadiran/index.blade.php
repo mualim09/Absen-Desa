@@ -18,6 +18,7 @@
                               <tr>
                                   <th class="text-center">No</th>
                                   <th class="text-center">Nama Pegawai</th>
+                                  <th class="text-center">Tanggal</th>
                                   <th class="text-center">Jam</th>
                                   <th class="text-center">Keterangan</th>
                                   {{-- <th class="text-center">Action</th> --}}
@@ -27,17 +28,21 @@
                               <tr>
                                   <th class="text-center">No</th>
                                   <th class="text-center">Nama Pegawai</th>
-                                  <th class="text-center">Waktu Absen</th>
+                                  <th class="text-center">Tanggal</th>
+                                  <th class="text-center">Jam</th>
                                   <th class="text-center">Keterangan</th>
                                   {{-- <th class="text-center">Action</th> --}}
                               </tr>
                           </tfoot>
                           <tbody>
+
+                            
                             @forelse ($kehadiran as $item)
                               <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
-                                <td class="text-center">{{ $item->nama }}</td>
-                                <td class="text-center">{{ $item->waktu_absensi }}</td>
+                                <td class="text-center">{{ $item->pegawai->nama }}</td>
+                                <td class="text-center">{{ $item->tanggal }}</td>
+                                <td class="text-center">{{ $item->jam }}</td>
                                 <td class="text-center"><h5><span class="badge badge-{{ ($item->keterangan == 'Hadir') ? 'success' : 'warning'   }}">{{ $item->keterangan }}</span></h5></td>
                                 {{-- <td> <form method="POST" action="{{ route('kegiatan.destroy',$item->id) }}" class="form-inline d-flex justify-content-center">
                                   @csrf
