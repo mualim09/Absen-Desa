@@ -33,7 +33,7 @@ Route::prefix('admin')->namespace('Admin')->middleware(['auth', 'web'])->group(f
 
     Route::post('/s/password_update', 'SettingController@password_update')->name('setting.password_update');
 
-    Route::resource('pegawai', 'pegawaiController');
+    Route::resource('pegawai', 'PegawaiController');
     Route::resource('kegiatan', 'KegiatanController');
     Route::resource('kehadiran', 'KehadiranController');
 });
