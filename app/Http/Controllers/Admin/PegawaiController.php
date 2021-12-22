@@ -46,7 +46,7 @@ class PegawaiController extends Controller
             'jenis_kelamin' => 'required|string',
             'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'no_hp' => 'required|numeric',
-            'email' => 'required|unique:Pegawais|email'
+            'email' => 'required|unique:pegawai|email'
         ]);
 
         $imageName = time() . '.' . $request->picture->extension();

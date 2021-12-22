@@ -21,7 +21,7 @@ class CreateKehadiranTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('pegawai_id');
-            $table->foreign('pegawai_id')->references('id')->on('pegawais');
+            $table->foreign('pegawai_id')->references('id')->on('pegawai');
             $table->timestamps();
         });
     }

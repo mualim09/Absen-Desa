@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['register' => false]);
 
 Route::prefix('admin')->namespace('Admin')->middleware(['auth', 'web'])->group(function () {
-    Route::get('/', 'HomeController@index')->name('admin.index');
+    Route::get('', 'HomeController@index')->name('admin.index');
 
     Route::get('/s', 'SettingController@index')->name('setting.index');
 
